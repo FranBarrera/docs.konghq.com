@@ -12,14 +12,16 @@ toc: true
 
 ## kong.router
 
-Router module
+Router module.
+
  A set of functions to access the routing properties of the request.
+
 
 
 
 ### kong.router.get_route()
 
-Returns the current `route` entity.  The request was matched against this
+Returns the current `route` entity.  The request is matched against this
  route.
 
 
@@ -29,7 +31,7 @@ Returns the current `route` entity.  The request was matched against this
 
 **Returns**
 
-* `table` the `route` entity.
+* `table`:  The `route` entity.
 
 
 **Usage**
@@ -39,12 +41,11 @@ local route = kong.router.get_route()
 local protocols = route.protocols
 ```
 
-[Back to top](#kongrouter)
 
 
 ### kong.router.get_service()
 
-Returns the current `service` entity.  The request will be targetted to this
+Returns the current `service` entity.  The request is targeted to this
  upstream service.
 
 
@@ -54,7 +55,7 @@ Returns the current `service` entity.  The request will be targetted to this
 
 **Returns**
 
-* `table` the `service` entity.
+* `table`:  The `service` entity.
 
 
 **Usage**
@@ -67,5 +68,4 @@ else
 end
 ```
 
-[Back to top](#kongrouter)
 

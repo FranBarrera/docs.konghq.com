@@ -18,13 +18,9 @@ The Plugin Development Kit (or "PDK") is set of Lua functions and variables
  released in Kong 0.14.0. The PDK will be guaranteed to be forward-compatible
  from its 1.0.0 release and on.
 
- As of this release, the PDK has not yet reached 1.0.0, but plugin authors
- can already depend on it for a safe and reliable way of interacting with the
- request, response, or the core components.
-
  The Plugin Development Kit is accessible from the `kong` global variable,
  and various functionalities are namespaced under this table, such as
- `kong.request`, `kong.log`, etc...
+ `kong.request`, `kong.log`, etc.
 
 
 
@@ -40,7 +36,6 @@ A human-readable string containing the version number of the currently
 print(kong.version) -- "2.0.0"
 ```
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.version_num
@@ -56,7 +51,6 @@ if kong.version_num < 13000 then -- 000.130.00 -> 0.13.0
 end
 ```
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.pdk_major_version
@@ -74,7 +68,6 @@ if kong.pdk_version_num < 2 then
 end
 ```
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.pdk_version
@@ -87,7 +80,6 @@ A human-readable string containing the version number of the current PDK.
 print(kong.pdk_version) -- "1.0.0"
 ```
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.configuration
@@ -98,7 +90,7 @@ A read-only table containing the configuration of the current Kong node,
  See [kong.conf.default](https://github.com/Kong/kong/blob/master/kong.conf.default)
  for details.
 
- Comma-separated lists in that file get promoted to arrays of strings in this
+ Comma-separated lists in the `kong.conf` file get promoted to arrays of strings in this
  table.
 
 
@@ -110,7 +102,6 @@ print(kong.configuration.prefix) -- "/usr/local/kong"
 kong.configuration.prefix = "foo"
 ```
 
-[Back to top](#plugin-development-kit)
 
 
 
@@ -131,7 +122,6 @@ kong.db.services:insert()
 kong.db.routes:select()
 ```
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.dns
@@ -139,11 +129,10 @@ kong.db.routes:select()
 Instance of Kong's DNS resolver, a client object from the
  [lua-resty-dns-client](https://github.com/kong/lua-resty-dns-client) module.
 
- **Note:** usage of this module is currently reserved to the core or to
+ **Note:** Usage of this module is currently reserved to the core or to
  advanced users.
 
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.worker_events
@@ -152,32 +141,29 @@ Instance of Kong's IPC module for inter-workers communication from the
  [lua-resty-worker-events](https://github.com/Kong/lua-resty-worker-events)
  module.
 
- **Note:** usage of this module is currently reserved to the core or to
+ **Note:** Usage of this module is currently reserved to the core or to
  advanced users.
 
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.cluster_events
 
 Instance of Kong's cluster events module for inter-nodes communication.
 
- **Note:** usage of this module is currently reserved to the core or to
+ **Note:** Usage of this module is currently reserved to the core or to
  advanced users.
 
 
-[Back to top](#plugin-development-kit)
 
 
 ### kong.cache
 
 Instance of Kong's database caching object, from the `kong.cache` module.
 
- **Note:** usage of this module is currently reserved to the core or to
+ **Note:** Usage of this module is currently reserved to the core or to
  advanced users.
 
 
-[Back to top](#plugin-development-kit)
 
 

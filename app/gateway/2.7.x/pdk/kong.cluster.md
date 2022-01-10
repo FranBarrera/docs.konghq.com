@@ -12,7 +12,7 @@ toc: true
 
 ## kong.cluster
 
-Cluster-level utilities
+Cluster-level utilities.
 
 
 
@@ -22,17 +22,17 @@ Returns the unique id for this Kong cluster.  If Kong
  is running in DB-less mode without a cluster ID explicitly defined,
  then this method returns nil.
 
- For Hybrid mode, all Control Planes and Data Planes belonging to the same
- cluster returns the same cluster ID. For traditional database based
- deployments, all Kong nodes pointing to the same database will also return
+ For hybrid mode, all control planes and data planes belonging to the same
+ cluster return the same cluster ID. For traditional database-based
+ deployments, all Kong nodes pointing to the same database also return
  the same cluster ID.
 
 
 **Returns**
 
-1.  `string|nil` The v4 UUID used by this cluster as its id
+1.  `string|nil`:  The v4 UUID used by this cluster as its ID.
 
-1.  `string|nil` an error message
+1.  `string|nil`:  An error message.
 
 
 **Usage**
@@ -50,5 +50,4 @@ end
 -- use id here
 ```
 
-[Back to top](#kongcluster)
 
